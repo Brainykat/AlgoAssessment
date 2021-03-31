@@ -30,7 +30,11 @@ namespace TGS.Challenge
       if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
       var wordOneCharArr = word1.ToLower().ToCharArray();
       var wordTwoCharArr = word2.ToLower().ToCharArray();
-
+      Array.Sort(wordOneCharArr);
+      Array.Sort(wordTwoCharArr);
+      var wordOneCharString = new string(wordOneCharArr);
+      var wordTwoCharString = new string(wordTwoCharArr);
+      return wordOneCharString == wordTwoCharString;
     }
   }
 }
