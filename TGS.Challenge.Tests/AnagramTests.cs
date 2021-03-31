@@ -38,7 +38,7 @@ namespace TGS.Challenge.Tests
       //This Isnt an anagram second word has a double 'e' with no 'a'
       var result = _anagram.AreAnagrams("Funeral", "Reel fun");
 
-      Assert.True(result);
+      Assert.False(result);
     }
 
     [Fact]
