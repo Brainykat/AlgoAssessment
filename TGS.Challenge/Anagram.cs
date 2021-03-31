@@ -1,3 +1,5 @@
+using System;
+
 namespace TGS.Challenge
 {
   /*
@@ -24,7 +26,10 @@ namespace TGS.Challenge
     {
       public bool AreAnagrams(string word1, string word2)
       {
-        return false;
+      if (string.IsNullOrWhiteSpace(word1)) throw new ArgumentException($"Supply the first word {word1}");
+      if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
+
+
       }
     }
 }
