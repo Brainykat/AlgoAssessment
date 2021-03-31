@@ -32,9 +32,7 @@ namespace TGS.Challenge
       var wordTwoCharArr = word2.ToLower().ToCharArray();
       Array.Sort(wordOneCharArr);
       Array.Sort(wordTwoCharArr);
-      var wordOneCharString = new string(wordOneCharArr);
-      var wordTwoCharString = new string(wordTwoCharArr);
-      return wordOneCharString == wordTwoCharString;
+      return new string(wordOneCharArr) == new string(wordTwoCharArr);
     }
   }
 }
