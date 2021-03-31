@@ -20,7 +20,7 @@ namespace TGS.Challenge
     {
       if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException($"Supply the first word {value}");
       var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
-      return value.Count(c => vowels.Contains(c));
+      return value.ToLower().Count(c => vowels.Contains(c));
     }
   }
 }
