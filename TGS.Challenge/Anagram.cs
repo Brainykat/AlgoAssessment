@@ -30,8 +30,8 @@ namespace TGS.Challenge
       if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
       word1 = word1.RemoveCharacters();
       word2 = word2.RemoveCharacters();
-      var wordOneCharArr = word1.ToLower().ToCharArray();
-      var wordTwoCharArr = word2.ToLower().ToCharArray();
+      var wordOneCharArr = word1.ToArray();
+      var wordTwoCharArr = word2.ToArray();
       Array.Sort(wordOneCharArr);
       Array.Sort(wordTwoCharArr);
       return new string(wordOneCharArr) == new string(wordTwoCharArr);
@@ -45,6 +45,6 @@ namespace TGS.Challenge
       char[] unwantedCharacters = new char[] { ' ', '!', '?', '-', '_', '(', ')', '"', ':', ';', '\'' };
       return s == null ? null : string.Join(string.Empty, s.Split(unwantedCharacters));
     }
-      
+    public static Char[] ToArray(this string s) => s.ToLower().ToCharArray();
   }
 }
