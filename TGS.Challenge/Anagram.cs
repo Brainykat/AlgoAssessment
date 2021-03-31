@@ -28,6 +28,8 @@ namespace TGS.Challenge
     {
       if (string.IsNullOrWhiteSpace(word1)) throw new ArgumentException($"Supply the first word {word1}");
       if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
+      word1 = string.Join(string.Empty, word1.Split(' ', '!', '?', '-', '_','(',')','"',':',';','\''));
+      word2 = string.Join(string.Empty, word2.Split(' ', '!', '?', '-', '_', '(', ')', '"', ':', ';', '\''));
       var wordOneCharArr = word1.ToLower().ToCharArray();
       var wordTwoCharArr = word2.ToLower().ToCharArray();
       Array.Sort(wordOneCharArr);
