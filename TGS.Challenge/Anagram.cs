@@ -22,14 +22,15 @@ namespace TGS.Challenge
         There are accompanying unit tests for this exercise, ensure all tests pass & make
         sure the unit tests are correct too.
      */
-    public class Anagram
+  public class Anagram
+  {
+    public bool AreAnagrams(string word1, string word2)
     {
-      public bool AreAnagrams(string word1, string word2)
-      {
       if (string.IsNullOrWhiteSpace(word1)) throw new ArgumentException($"Supply the first word {word1}");
       if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
+      var wordOneCharArr = word1.ToLower().ToCharArray();
+      var wordTwoCharArr = word2.ToLower().ToCharArray();
 
-
-      }
     }
+  }
 }
