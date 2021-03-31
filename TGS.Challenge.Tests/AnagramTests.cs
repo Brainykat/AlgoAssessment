@@ -35,6 +35,7 @@ namespace TGS.Challenge.Tests
     [Fact]
     public void Funeral_IsAnagram_Reel_fun()
     {
+      //This Isnt an anagram second word has a double 'e' with no 'a'
       var result = _anagram.AreAnagrams("Funeral", "Reel fun");
 
       Assert.True(result);
