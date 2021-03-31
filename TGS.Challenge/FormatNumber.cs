@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TGS.Challenge
 {
@@ -28,15 +29,9 @@ namespace TGS.Challenge
     {
       if (value < 0 || value > 1000000000) throw new ArgumentOutOfRangeException();
       string stringValue = value.ToString();
-      if (stringValue.Length <= 3) return stringValue;
-      for (int i = stringValue.Length - 1; i >= 0; i--)
-      {
-        if(i/3 == 0)
-        {
-          stringValue.Insert(i, ",");
-        }
-      }
-      return stringValue;
+      if (stringValue.Length <= 3) return stringValue; //1000
+      return String.Format("{0:0,0}", value);
     }
+    
   }
 }

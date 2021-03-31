@@ -84,7 +84,7 @@ namespace TGS.Challenge.Tests
     {
       var formatted = _formatNumber.Format(35235235);
 
-      Assert.Equal("35,2352,35", formatted);
+      Assert.Equal("35,235,235", formatted);
     }
   }  
 }
