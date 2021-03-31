@@ -28,13 +28,23 @@ namespace TGS.Challenge
     {
       if (string.IsNullOrWhiteSpace(word1)) throw new ArgumentException($"Supply the first word {word1}");
       if (string.IsNullOrWhiteSpace(word2)) throw new ArgumentException($"Supply the second word {word2}");
-      word1 = string.Join(string.Empty, word1.Split(' ', '!', '?', '-', '_','(',')','"',':',';','\''));
-      word2 = string.Join(string.Empty, word2.Split(' ', '!', '?', '-', '_', '(', ')', '"', ':', ';', '\''));
+      word1 = word1.RemoveCharacters();
+      word2 = word2.RemoveCharacters();
       var wordOneCharArr = word1.ToLower().ToCharArray();
       var wordTwoCharArr = word2.ToLower().ToCharArray();
       Array.Sort(wordOneCharArr);
       Array.Sort(wordTwoCharArr);
       return new string(wordOneCharArr) == new string(wordTwoCharArr);
     }
+    
+  }
+  public static class CharacterRemover
+  {
+    public static string RemoveCharacters(this string s)
+    { 
+      char[] unwantedCharacters = new char[] { ' ', '!', '?', '-', '_', '(', ')', '"', ':', ';', '\'' };
+      return s == null ? null : string.Join(string.Empty, s.Split(unwantedCharacters));
+    }
+      
   }
 }
